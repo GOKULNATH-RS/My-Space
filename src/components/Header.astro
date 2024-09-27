@@ -22,6 +22,14 @@ const { title, icon, count } = Astro.props
     }
   </div>
   <div class='text-light opacity-85 text-sm'>
-    {icon && <p>Blogs publised: {count} </p>}
+    {
+      icon && (
+        <div class='flex items-center'>
+          <img src='/icons/logo.svg' alt='Logo' class='h-8 w-8' />
+
+          <p>Blogs publised: {count} </p>
+        </div>
+      )
+    }
   </div>
 </header>
