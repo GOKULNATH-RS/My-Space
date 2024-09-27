@@ -16,35 +16,58 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="bg-gradient-to-b h-screen from-[#040308] to-[#05010D] custom-scrollbar">
 		<slot />
 	</body>
 </html>
 <style is:global>
+	@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+		--text-gradient: linear-gradient(90deg,#3C00B5 0%,#20019B 100%);
+		--white-gradient: linear-gradient(90deg,#FFFFFF 0%,#E0E0E0 100%);
 	}
+
 	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
+		font-family: "Inter",system-ui;
+		color: white;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+
+	.text-gradient {
+		background-image: var(--text-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 	}
+	
+	.white-gradient {
+		background-image: var(--white-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.no-scrollbar::-webkit-scrollbar {
+	display: none;
+	}
+	/* Hide scrollbar for IE, Edge and Firefox */
+	.no-scrollbar {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+	}
+
+	.custom-scrollbar::-webkit-scrollbar {
+	width: 4px;
+	height: 3px;
+	border-radius: 4px;
+	}
+	.custom-scrollbar::-webkit-scrollbar-track {
+	background: #040308;
+	}
+	.custom-scrollbar::-webkit-scrollbar-thumb {
+	background: #110922;
+	border-radius: 50px;
+	}
+	.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+	background: #555;
+	}
+
 </style>
