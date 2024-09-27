@@ -17,20 +17,28 @@ export async function getStaticPaths() {
   return paths
 }
 
-const { data, body } = Astro.props
+const { data, body, render } = Astro.props
 const { title, tags = [] as string[], date } = data
 console.log(body)
+const { content } = body
+const { Content } = await render()
 ---
 
 <Layout title={title}>
   <main class='m-4 xl:mx-56 mx-40 max-md:mx-20 max-sm:mx-12'>
-    <Header title=`Let's Learn..` />
+    <Header title=`<--` />
+
     <div>
       <p class='text-[15px] opacity-80'>{date}</p>
       <h1 class='text-[50px] font-bold leading-[60px]'>{title}</h1>
       <div class='py-8 flex gap-1 items-center'>
         {tags.map((tag: string) => <Tag tag={tag} />)}
       </div>
+    </div>
+    <div
+      class='prose lg:prose-xl pb-20 prose-headings:text-white prose-p:text-white'
+    >
+      <Content />
     </div>
   </main>
 </Layout>

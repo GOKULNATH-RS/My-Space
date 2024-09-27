@@ -1,73 +1,74 @@
 ---
 interface Props {
-	title: string;
+  title: string
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class="bg-gradient-to-b h-screen from-[#040308] to-[#05010D] custom-scrollbar ">
-		<slot />
-	</body>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='description' content='Astro description' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body
+    class='bg-gradient-to-b min-h-screen from-[#040308] to-[#05010D] custom-scrollbar'
+  >
+    <slot />
+  </body>
 </html>
 <style is:global>
-	@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-	:root {
-		--text-gradient: linear-gradient(90deg,#3C00B5 0%,#20019B 100%);
-		--white-gradient: linear-gradient(90deg,#FFFFFF 0%,#E0E0E0 100%);
-	}
+  :root {
+    --text-gradient: linear-gradient(90deg, #3c00b5 0%, #20019b 100%);
+    --white-gradient: linear-gradient(90deg, #ffffff 0%, #e0e0e0 100%);
+  }
 
-	html {
-		font-family: "Inter",system-ui;
-		color: white;
-	}
+  html {
+    font-family: 'Inter', system-ui;
+    color: white;
+  }
 
-	.text-gradient {
-		background-image: var(--text-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-	}
-	
-	.white-gradient {
-		background-image: var(--white-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-	}
+  .text-gradient {
+    background-image: var(--text-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-	.no-scrollbar::-webkit-scrollbar {
-	display: none;
-	}
-	/* Hide scrollbar for IE, Edge and Firefox */
-	.no-scrollbar {
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
-	}
+  .white-gradient {
+    background-image: var(--white-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-	.custom-scrollbar::-webkit-scrollbar {
-	width: 4px;
-	height: 3px;
-	border-radius: 4px;
-	}
-	.custom-scrollbar::-webkit-scrollbar-track {
-	background: #040308;
-	}
-	.custom-scrollbar::-webkit-scrollbar-thumb {
-	background: #110922;
-	border-radius: 50px;
-	}
-	.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-	background: #555;
-	}
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+    height: 3px;
+    border-radius: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #040308;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #110922;
+    border-radius: 50px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 </style>
