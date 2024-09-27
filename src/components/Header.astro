@@ -2,9 +2,10 @@
 interface Props {
   title: string
   icon?: boolean
+  count?: number
 }
 
-const { title, icon } = Astro.props
+const { title, icon, count } = Astro.props
 ---
 
 <header class='flex justify-between items-center py-4'>
@@ -20,9 +21,7 @@ const { title, icon } = Astro.props
       )
     }
   </div>
-  <div>
-    <button class='flex justify-center items-center'>
-      <img src='/icons/moon.svg' alt='moon' class='max-sm:h-6 max-sm:w-6' />
-    </button>
+  <div class='text-light opacity-85 text-sm'>
+    {icon && <p>Blogs publised: {count} </p>}
   </div>
 </header>

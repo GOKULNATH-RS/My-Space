@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content'
 import Layout from '../../layouts/Layout.astro'
 import Header from '../../components/Header.astro'
 import Tag from '../../components/Tag.astro'
+import Footer from '../../components/Footer.astro'
 
 export async function getStaticPaths() {
   const blogs = await getCollection('blogs')
@@ -19,8 +20,6 @@ export async function getStaticPaths() {
 
 const { data, body, render } = Astro.props
 const { title, tags = [] as string[], date } = data
-console.log(body)
-const { content } = body
 const { Content } = await render()
 ---
 
@@ -36,9 +35,10 @@ const { Content } = await render()
       </div>
     </div>
     <div
-      class='prose lg:prose-xl pb-20 prose-headings:text-white prose-p:text-white'
+      class='prose lg:prose-xl xl:prose-2xl pb-20 prose-headings:text-white prose-p:text-white'
     >
       <Content />
     </div>
+    <Footer />
   </main>
 </Layout>

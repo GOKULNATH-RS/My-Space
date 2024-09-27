@@ -1,4 +1,6 @@
 ---
+import Footer from '../components/Footer.astro'
+
 interface Props {
   title: string
 }
@@ -17,7 +19,7 @@ const { title } = Astro.props
     <title>{title}</title>
   </head>
   <body
-    class='bg-gradient-to-b min-h-screen from-[#040308] to-[#05010D] custom-scrollbar'
+    class='bg-gradient-to-b min-h-screen from-[#040308] to-[#05010D] custom-scrollbar text-white'
   >
     <slot />
   </body>
@@ -32,7 +34,6 @@ const { title } = Astro.props
 
   html {
     font-family: 'Inter', system-ui;
-    color: white;
   }
 
   .text-gradient {
