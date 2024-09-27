@@ -27,7 +27,7 @@ const { Content } = await render()
   <main class='m-4 xl:mx-56 mx-40 max-md:mx-20 max-sm:mx-12'>
     <Header title=`<--` />
 
-    <div>
+    <div class='dropDown-animation mt-10'>
       <p class='text-[15px] opacity-80'>{date}</p>
       <h1 class='text-[50px] font-bold leading-[60px]'>{title}</h1>
       <div class='py-8 flex gap-1 items-center'>
@@ -35,7 +35,7 @@ const { Content } = await render()
       </div>
     </div>
     <div
-      class='prose lg:prose-xl xl:prose-2xl pb-20 prose-headings:text-white prose-p:text-white'
+      class='dropUp-animation prose lg:prose-xl xl:prose-2xl pb-20 prose-headings:text-white prose-p:text-white'
     >
       <Content />
     </div>

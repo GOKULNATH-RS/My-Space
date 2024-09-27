@@ -14,7 +14,7 @@ const blogs: Array<any> = await getCollection('blogs')
 
     <!-- Top Content -->
     <div
-      class='flex flex-col gap-4 justify-center items-center py-16 animate-fade-in'
+      class='flex flex-col gap-4 justify-center items-center py-16 dropDown-animation'
     >
       <h1
         class='font-bold text-[70px] max-lg:text-[64px] max-md:text-[54px] max-sm:text-4xl white-gradient'
@@ -31,7 +31,9 @@ const blogs: Array<any> = await getCollection('blogs')
     </div>
 
     <!-- Blogs -->
-    <div class='flex flex-col gap-4 pb-10 justify-center items-center'>
+    <div
+      class='dropUp-animation flex flex-col gap-4 pb-10 justify-center items-center'
+    >
       {
         blogs?.map((blog) => {
           return (
@@ -40,6 +42,7 @@ const blogs: Array<any> = await getCollection('blogs')
               tags={blog.data.tags}
               date={blog.data.date}
               href={blog.data.href}
+              description={blog.data.description}
               slug={blog.slug}
             />
           )
