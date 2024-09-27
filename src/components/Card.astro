@@ -15,7 +15,7 @@ const { href, title, tags, date, slug, description } = Astro.props
 
 <a
   href={`blog/${slug}`}
-  class='bg-[#090712] w-[1020px] max-xl:w-[780px] max-md:w-[600px] max-sm:w-[300px] h-[180px] max-md:h-[160px] max-sm:h-[100px] p-[30px] pb-[20px] max-sm:p-[20px] max-sm:pb-[10px] rounded-[25px] border-[1px] border-[#1c192b] hover:border-[#161421] hover:scale-[1.005] duration-300'
+  class='bg-[#090712] w-[1020px] max-xl:w-[780px] max-md:w-[600px] max-sm:w-[300px] h-[180px] max-md:h-[160px] max-sm:h-[100px] p-[30px] pb-[20px] max-sm:p-[20px] max-sm:pb-[10px] rounded-[25px] border-[1px] border-[#1c192b] hover:border-[#161421] hover:scale-[1.005] duration-300 focus:bg-[#131022]'
 >
   <div class='flex flex-col justify-between w-full h-full'>
     <div>
@@ -31,7 +31,7 @@ const { href, title, tags, date, slug, description } = Astro.props
       </p>
     </div>
     <div class='flex justify-between items-center'>
-      <div class='flex gap-1 items-center max-w-[200px] flex-wrap'>
+      <div class='flex gap-1 items-center max-sm:max-w-[200px] flex-wrap'>
         {tags.map((tag) => <Tag tag={tag} />)}
       </div>
       <p
