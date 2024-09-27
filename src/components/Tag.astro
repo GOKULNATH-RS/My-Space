@@ -1,11 +1,13 @@
 ---
 interface Props {
-    tag: string;
+  tag: string
 }
 
-const { tag } = Astro.props;
+const { tag } = Astro.props
 ---
 
-<div>
-    <p>{tag}</p>
+<div
+  class='w-max h-[25px] bg-[#0F0633] px-[10px] py-[4px] flex justify-center items-center rounded-[25px]'
+>
+  <p class='text-[10px]'>{tag}</p>
 </div>

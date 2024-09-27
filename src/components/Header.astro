@@ -1,0 +1,28 @@
+---
+interface Props {
+  title: string
+  icon?: boolean
+}
+
+const { title, icon } = Astro.props
+---
+
+<header class='flex justify-between items-center py-4'>
+  <div class='flex gap-1 items-center'>
+    <h1 class='text-2xl max-sm:text-xl font-bold'>{title}</h1>
+    {
+      icon && (
+        <img
+          src='/icons/waving-hand.svg'
+          alt='Astro logo'
+          class='w-6 h-6 max-sm:h-4 max-sm:w-4'
+        />
+      )
+    }
+  </div>
+  <div>
+    <button class='flex justify-center items-center'>
+      <img src='/icons/moon.svg' alt='moon' class='max-sm:h-6 max-sm:w-6' />
+    </button>
+  </div>
+</header>

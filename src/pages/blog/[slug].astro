@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content'
+import Layout from '../../layouts/Layout.astro'
+import Header from '../../components/Header.astro'
+import Tag from '../../components/Tag.astro'
+
+export async function getStaticPaths() {
+  const blogs = await getCollection('blogs')
+  const paths = blogs.map((blog: any) => {
+    return {
+      params: {
+        slug: blog.slug
+      },
+      props: blog
+    }
+  })
+  return paths
+}
+
+const { data, body } = Astro.props
+const { title, tags = [] as string[], date } = data
+console.log(body)
+---
+
+<Layout title={title}>
+  <main class='m-4 xl:mx-56 mx-40 max-md:mx-20 max-sm:mx-12'>
+    <Header title=`Let's Learn..` />
+    <div>
+      <p class='text-[15px] opacity-80'>{date}</p>
+      <h1 class='text-[50px] font-bold leading-[60px]'>{title}</h1>
+      <div class='py-8 flex gap-1 items-center'>
+        {tags.map((tag: string) => <Tag tag={tag} />)}
+      </div>
+    </div>
+  </main>
+</Layout>
