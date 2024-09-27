@@ -15,26 +15,28 @@ const { href, title, tags, date, slug, description } = Astro.props
 
 <a
   href={`blog/${slug}`}
-  class='bg-[#090712] w-[1020px] max-xl:w-[780px] max-md:w-[600px] max-sm:w-[400px] h-[180px] max-md:h-[160px] max-sm:h-[120px] p-[30px] pb-[20px] max-sm:p-[20px] max-sm:pb-[10px] rounded-[25px] border-[1px] border-[#1c192b] hover:border-[#161421] hover:scale-[1.005] duration-300'
+  class='bg-[#090712] w-[1020px] max-xl:w-[780px] max-md:w-[600px] max-sm:w-[300px] h-[180px] max-md:h-[160px] max-sm:h-[100px] p-[30px] pb-[20px] max-sm:p-[20px] max-sm:pb-[10px] rounded-[25px] border-[1px] border-[#1c192b] hover:border-[#161421] hover:scale-[1.005] duration-300'
 >
   <div class='flex flex-col justify-between w-full h-full'>
     <div>
       <h1
-        class='text-[32px] max-xl:text-[28px] max-sm:text-[16px] font-semibold'
+        class='text-[32px] max-xl:text-[28px] max-sm:text-[14px] font-semibold'
       >
         {title}
       </h1>
       <p
-        class='text-[14px] px-1 font-light opacity-70 max-w-[900px] max-xl:w-[660px] max-md:w-[480px] max-sm:w-[280px] text-wrap overflow-y-hidden max-h- max-xl:text-[12px] max-sm:text-[10px]'
+        class='text-[14px] px-1 font-light opacity-70 max-w-[900px] max-xl:w-[660px] max-md:w-[480px] max-sm:w-[280px] text-wrap overflow-y-hidden max-xl:text-[12px] max-sm:text-[8px]'
       >
         {description}
       </p>
     </div>
     <div class='flex justify-between items-center'>
-      <div class='flex gap-1 items-center'>
+      <div class='flex gap-1 items-center max-w-[200px] flex-wrap'>
         {tags.map((tag) => <Tag tag={tag} />)}
       </div>
-      <p class='text-[15px] max-xl:text-[13px] max-sm:text-[10px] opacity-70'>
+      <p
+        class='w-max text-[15px] max-xl:text-[13px] max-sm:text-[8px] opacity-70'
+      >
         {date}
       </p>
     </div>

@@ -27,15 +27,19 @@ const { Content } = await render()
   <main class='m-4 xl:mx-56 mx-40 max-md:mx-20 max-sm:mx-12'>
     <Header title=`<--` />
 
-    <div class='dropDown-animation mt-10'>
-      <p class='text-[15px] opacity-80'>{date}</p>
-      <h1 class='text-[50px] font-bold leading-[60px]'>{title}</h1>
-      <div class='py-8 flex gap-1 items-center'>
+    <div class='dropDown-animation mt-10 max-sm:mt-6'>
+      <p class='text-[15px] max-sm:text-[10px] opacity-80'>{date}</p>
+      <h1
+        class='text-[50px] font-bold leading-[60px] max-sm:leading-[40px] max-sm:text-[32px]'
+      >
+        {title}
+      </h1>
+      <div class='py-8 max-sm:py-4 flex gap-1 items-center'>
         {tags.map((tag: string) => <Tag tag={tag} />)}
       </div>
     </div>
     <div
-      class='dropUp-animation prose lg:prose-xl xl:prose-2xl pb-20 prose-headings:text-white prose-p:text-white'
+      class='dropUp-animation prose lg:prose-xl xl:prose-2xl max-sm:prose-sm pb-20 prose-headings:text-white prose-p:text-white'
     >
       <Content />
     </div>
