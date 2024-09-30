@@ -8,7 +8,13 @@ interface Props {
 const { title, icon, count } = Astro.props
 ---
 
-<header class='flex justify-between items-center py-4 dropDown-animation'>
+<header
+  class='flex relative justify-between items-center py-4 dropDown-animation'
+>
+  <div
+    class='absolute top-[-250px] max-lg:top-[-200px] max-md:top-[-175px] max-sm:top-[-150px] left-0 right-0 m-auto h-[400px] w-[400px] max-lg:h-[350px] max-lg:w-[350px] max-md:h-[300px] max-md:w-[300px] max-sm:h-[200px] max-sm:w-[200px] purple-gradient rounded-full blur-[250px] max-lg:blur-[200px] max-md:blur-[150px] max-sm:blur-[100px] z-[-1]'
+  >
+  </div>
   <div class='flex gap-1 items-center'>
     <a href='/' class='text-2xl max-sm:text-lg font-bold'>{title}</a>
     {
