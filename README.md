@@ -2,7 +2,8 @@
 
 # My Space
 
-I developed this website to document my learnings, Experience related to tech.
+I developed this website to document my learnings, Experience related to tech. It's my personal blog site
+
 
 ### Tech Stack
 
